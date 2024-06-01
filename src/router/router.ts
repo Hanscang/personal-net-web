@@ -1,15 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import _Test from '@/_Test.vue'
 import App from '@/App.vue'
+import NetHome from '@/views/NetHome.vue'
+import _Test from '@/MyTest.vue'
+import BiographicalNote from '@/BiographicalNote.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'NetHome',
-      redirect: ''
+      name: '',
+      redirect: 'biographic-note'
+    },
+    {
+      path: '/biographic-note/:id',
+      name: '简历',
+      component: BiographicalNote
     },
     {
       path: '/test',
